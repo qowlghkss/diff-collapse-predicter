@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Data & Models
+data/
+outputs/
+runs/
+cache/
+*.npy
+*.npz
+*.pt
+*.ckpt
+*.weights
+*.bin
+
+# Logs & OS
+*.log
+.DS_Store
+.ipynb_checkpoints/

@@ -1,0 +1,47 @@
+{
+  "synthetic_data": false,
+  "total_runs_per_condition": {
+    "control": 100,
+    "ci": 100,
+    "random": 100
+  },
+  "overall_collapse_rate": {
+    "control": 0.21,
+    "ci": 0.13,
+    "random": 0.07
+  },
+  "collapse_count": {
+    "control": 21,
+    "ci": 13,
+    "random": 7
+  },
+  "per_prompt_collapse_rate": {
+    "control": {
+      "p0": 0.05,
+      "p1": 0.05,
+      "p2": 0.5,
+      "p3": 0.25,
+      "p4": 0.2
+    },
+    "ci": {
+      "p0": 0.05,
+      "p1": 0.0,
+      "p2": 0.35,
+      "p3": 0.1,
+      "p4": 0.15
+    },
+    "random": {
+      "p0": 0.05,
+      "p1": 0.0,
+      "p2": 0.2,
+      "p3": 0.1,
+      "p4": 0.0
+    }
+  },
+  "ci_early_warning_auc": 0.7139583333333334,
+  "collapse_reduction": {
+    "ci_vs_control_absolute": 0.07999999999999999,
+    "rand_vs_control_absolute": 0.13999999999999999,
+    "ci_vs_random_absolute": -0.06
+  }
+}
