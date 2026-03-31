@@ -12,7 +12,7 @@ pip install -r requirements.txt
 Step 1: Run intervention experiment
 
 python scripts/run_intervention_ablation.py
-
+```
 This generates:
 
 results/intervention.json
@@ -33,7 +33,7 @@ Random: timing-agnostic baseline
 Late: delayed intervention
 
  Repository Structure
-'''
+```
 configs/        Configuration files
 data/           Minimal data (or placeholder)
 results/        Experiment outputs
@@ -41,7 +41,7 @@ figures/        Publication figures
 scripts/        Reproducible experiment scripts
 paper/          Draft and analysis
 src/            Core implementation (not required for reproduction)
-'''
+```
 
  Notes
 This repo is paper-oriented and minimal.
