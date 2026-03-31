@@ -1,0 +1,15 @@
+{
+  "early_t_end": 16,
+  "collapse_percentile": 25,
+  "logistic_regression": {
+    "C": 0.001,
+    "class_weight": null,
+    "max_iter": 2000,
+    "optimized_threshold": 0.2530
+  },
+  "metrics": {
+    "pec_gamma": 1.0,
+    "vendi_sigma": 1.0
+  },
+  "random_seed": 42
+}
