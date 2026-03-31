@@ -1,0 +1,20 @@
+{
+  "Random": {
+    "mcnemar_p_value": 0.0390625,
+    "wilcoxon_pos_p_value": 0.4375,
+    "significant_mcnemar": true,
+    "significant_wilcoxon": false
+  },
+  "Majority": {
+    "mcnemar_p_value": 0.063568115234375,
+    "wilcoxon_pos_p_value": 0.0625,
+    "significant_mcnemar": false,
+    "significant_wilcoxon": false
+  },
+  "Heuristic (CI Threshold)": {
+    "mcnemar_p_value": 1.0,
+    "wilcoxon_pos_p_value": 0.0625,
+    "significant_mcnemar": false,
+    "significant_wilcoxon": false
+  }
+}

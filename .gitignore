@@ -4,7 +4,9 @@ __pycache__/
 *$py.class
 
 # Data & Models
-data/
+/data/
+/experiments/data/
+/experiments/final_validation/data/
 outputs/
 runs/
 cache/
