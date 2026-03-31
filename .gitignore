@@ -21,3 +21,23 @@ cache/
 *.log
 .DS_Store
 .ipynb_checkpoints/
+Thumbs.db
+
+# Virtual environments
+venv/
+.venv/
+env/
+.Python
+
+# Python tool caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Temp files
+*.tmp
+*.temp
+*~
+
+# Packaged artifacts
+figures.zip
