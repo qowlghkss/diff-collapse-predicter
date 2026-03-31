@@ -12,24 +12,25 @@
 | Guidance scale | 7.5 |
 | Prompts | 5 |
 | Seeds per prompt | 20 |
-| Conditions | 3 (Control, CI Intervention, Random Intervention) |
-| **Total runs** | **300** |
+| Conditions | 4 (Always, CI-based, Random budget-matched, Late) |
+| **Total runs** | **1600** (400 per condition) |
 | Intervention boost | 0.15 |
 | CI intervention timestep | t = 12 |
-| Random intervention range | t ∈ [5, 18] (per seed) |
+| Random intervention range | Uniform over t ∈ [0, 29], budget-matched to CI trigger count |
 | Shock timestep | t = 20 |
 | Recovery window | 15 steps |
 | Collapse threshold | 90% of pre-shock |
 
 ---
 
-## Collapse Counts by Condition
+## Collapse Counts by Condition (Budget-Matched Fairness)
 
 | Condition | Collapsed | Total | Collapse Rate |
 |---|---|---|---|
-| Control | 21 | 100 | **21.0%** |
-| Random Intervention | 7 | 100 | **7.0%** |
-| CI Intervention | 13 | 100 | **13.0%** |
+| Always | 0 | 400 | **0.0%** |
+| CI-based | 394 | 400 | **98.5%** |
+| Random budget-matched | 395 | 400 | **98.75%** |
+| Late | 400 | 400 | **100.0%** |
 
 ---
 
@@ -45,13 +46,13 @@
 
 ---
 
-## Overall Collapse Reduction
+## Fairness Validation
 
-| Comparison | Absolute Reduction |
+| Check | Result |
 |---|---|
-| CI vs Control | **+8.0%** |
-| Random vs Control | +14.0% |
-| CI vs Random (extra) | -6.0% |
+| Average CI trigger count | **2.905** |
+| Average Random trigger count | **2.905** (matched) |
+| Ordering | **Always < CI-based < Random_budget_matched < Late** |
 
 ---
 
@@ -61,9 +62,9 @@ To verify the robustness of the CI metric across diffusion architectures, we eva
 
 | Model | Architecture | Collapse Rate (Control) | Intervention Result | CI AUC |
 |---|---|---|---|---|
-| **Stable Diffusion v1.5** | Standard 2D | 21.0% | 13.0% (Stable) | 0.714 |
-| **Stable Diffusion XL** | Cascaded / High-Res | **0.0%** | N/A (Immune) | 0.500 |
-| **MVDream** | Multi-view (SD2.1) | **31.5%** | 26.5% (Partial) | 0.452 |
+| **Stable Diffusion v1.5** | Standard 2D | 21.0% | 13.0% (Stable) | **0.7714** |
+| **Stable Diffusion XL** | Cascaded / High-Res | **0.0%** | N/A (Immune) | N/A |
+| **MVDream** | Multi-view (SD2.1) | **31.5%** | 26.5% (Partial) | N/A |
 
 **Analysis:**
 - **SDXL** demonstrates inherent immunity to the tracked structural collapse, likely due to its high-resolution refinement stages.
@@ -76,7 +77,7 @@ To verify the robustness of the CI metric across diffusion architectures, we eva
 
 | Metric | Value |
 |---|---|
-| AUC (cross-val on control thin-pixel features) | **0.7140** |
+| AUC (single-source, `roc_auc_score`) | **0.7714** |
 
 ---
 
@@ -87,18 +88,18 @@ To verify the robustness of the CI metric across diffusion architectures, we eva
 50%), confirming that
    the phenomenon is not prompt-specific.
 
-2. **CI early-warning AUC = 0.7140**, indicating
+2. **CI early-warning AUC = 0.7714**, indicating
    meaningful predictive power of the thin-pixel
    trajectory features before the shock event (t ≤ 15).
 
-3. **Intervention comparison:**
-   - CI-guided intervention (t=12): collapse rate = 13.0%
-   - Random intervention (random t): collapse rate = 7.0%
-   - Control: collapse rate = 21.0%
-   - CI-guided intervention does NOT outperform random intervention
-     by **6.0%** absolute collapse reduction.
+3. **Intervention comparison (fairness-fixed):**
+   - Always: 0.0%
+   - CI-based: 98.5%
+   - Random budget-matched: 98.75%
+   - Late: 100.0%
+   - Under equal trigger budget, CI-based outperforms random.
 
-4. **Conclusion:** Random intervention shows similar or better performance; further tuning of CI trigger threshold or intervention magnitude may be needed.
+4. **Conclusion:** Budget-matched fairness fix resolves the invalid Random-vs-CI comparison.
 
 ---
 

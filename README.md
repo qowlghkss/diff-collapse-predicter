@@ -1,27 +1,49 @@
 # Diffusion Collapse Early-Warning
 
-Research code for detecting and preventing structural collapse in 3D diffusion models.
+This repository provides a minimal reproducible pipeline for detecting and preventing structural collapse in diffusion-based 3D generation.
 
-## Structure
-- `src/`: Core implementation (diffusion tracking, interventions, metrics)
-- `experiments/`: Scripts to reproduce paper results
-- `figures/`: Final publication figures
-- `paper/`: Research report and analysis
+---
 
-## Setup
+## 🔧 Setup
+
 ```bash
 pip install -r requirements.txt
-```
 
-## Reproducing Results
-```bash
-python experiments/run_experiments.py
-python experiments/analyze_results.py
-```
+Step 1: Run intervention experiment
 
-## Digital Hygiene (KISTI Silver-Aligned)
-- Date of cleanup: `2026-03-31`
-- Orphaned figure assets were moved from `figures/` to `archived/figures_orphaned_2026-03-31/` (19 files).
-- Runtime cache and temporary artifacts were removed (`__pycache__/`, `*.pyc`, debug logs, packaged duplicate figure archive).
-- `figures/` now keeps only publication-referenced images used by main reports.
-- Long-term research data in `data/` remains preserved per retention policy.
+python scripts/run_intervention_ablation.py
+
+This generates:
+
+results/intervention.json
+
+Step 2: Generate figures
+python scripts/make_figures.py
+
+This produces:
+
+figures/publication/fig3_intervention.png
+ Main Result
+
+Figure 3 compares different intervention strategies:
+
+Always: continuous intervention (upper bound)
+CI-based: proposed method
+Random: timing-agnostic baseline
+Late: delayed intervention
+
+ Repository Structure
+'''
+configs/        Configuration files
+data/           Minimal data (or placeholder)
+results/        Experiment outputs
+figures/        Publication figures
+scripts/        Reproducible experiment scripts
+paper/          Draft and analysis
+src/            Core implementation (not required for reproduction)
+'''
+
+ Notes
+This repo is paper-oriented and minimal.
+Some large-scale experiments and exploratory scripts have been removed for clarity.
+The core claim can be reproduced using only the provided scripts.

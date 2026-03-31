@@ -1,0 +1,35 @@
+{
+  "figure1": {
+    "spike_t": 32,
+    "delta_t5": null,
+    "delta_t10": null,
+    "delta_t12": null,
+    "delta_t15": null
+  },
+  "figure2": {
+    "auc": 0.7714285714285715
+  },
+  "figure3": {
+    "control_rate": 0.21,
+    "ci_rate": 0.13,
+    "random_rate": 0.07,
+    "late_rate": null,
+    "recovery_success_ci_vs_control": 0.38095238095238093
+  },
+  "figure4": {
+    "mvdream_control": 0.6310371125116945,
+    "mvdream_intervention": 0.5992723984643817,
+    "mvdream_shock": 0.5615513543365523,
+    "sd15_control": null,
+    "sd15_intervention": null,
+    "sd15_shock": null,
+    "sdxl_control": null,
+    "sdxl_intervention": null,
+    "sdxl_shock": null
+  },
+  "figure5": {
+    "collapse": 4,
+    "non-collapse": 4,
+    "intervention": 4
+  }
+}
