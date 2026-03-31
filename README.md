@@ -13,6 +13,7 @@ Step 1: Run intervention experiment
 
 python scripts/run_intervention_ablation.py
 ```
+
 This generates:
 
 results/intervention.json

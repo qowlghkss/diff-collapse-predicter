@@ -1,6 +1,6 @@
 {
   "Always": 0.0,
-  "CI-based": 0.985,
-  "Random_budget_matched": 0.9875,
-  "Late": 1.0
+  "CI-timing": 0.97,
+  "Random_budget_matched": 0.9775,
+  "Late": 0.98
 }

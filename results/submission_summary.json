@@ -1,9 +1,11 @@
 {
-  "N": 400,
-  "T": 30,
+  "intervention_results": {
+    "Always": 0.0,
+    "CI-timing": 0.97,
+    "Random_budget_matched": 0.9775,
+    "Late": 0.98
+  },
   "avg_peak_t": 3,
-  "ci_trigger_count_per_run": 1,
-  "random_trigger_count_per_run": 1,
   "random_timestep_distribution": {
     "0": 17,
     "1": 22,
@@ -36,6 +38,8 @@
     "28": 11,
     "29": 13
   },
-  "strength": 0.01,
-  "risk_threshold": 1.04
+  "final_auc": 0.6770833333333334,
+  "CI_perceptual_correlation": 0.1576858937570723,
+  "nan_before": 1364,
+  "nan_after": 0
 }
